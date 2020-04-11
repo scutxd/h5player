@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         HTML5视频播放器增强脚本
+// @name         HTML5视频播放器增强脚本_修改按键
 // @name:en      HTML5 video player enhanced script
 // @name:zh      HTML5视频播放器增强脚本
 // @name:zh-CN   HTML5视频播放器增强脚本
@@ -1392,8 +1392,85 @@ var debug = {
 
 /* 当前用到的快捷键 */
 const hasUseKey = {
-  keyCodeList: [13, 16, 17, 18, 27, 32, 37, 38, 39, 40, 49, 50, 51, 52, 67, 68, 69, 70, 73, 74, 75, 78, 79, 80, 81, 82, 83, 84, 85, 87, 88, 89, 90, 97, 98, 99, 100, 220],
-  keyList: ['enter', 'shift', 'control', 'alt', 'escape', ' ', 'arrowleft', 'arrowright', 'arrowright', 'arrowup', 'arrowdown', '1', '2', '3', '4', 'c', 'd', 'e', 'f', 'i', 'j', 'k', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'w', 'x', 'y', 'z', '\\', '|'],
+  keyCodeList: [
+    13,
+    16,
+    17,
+    18,
+    27,
+    32,
+    37,
+    38,
+    39,
+    40,
+    49,
+    50,
+    51,
+    52,
+    67,
+    68,
+    69,
+    70,
+    73,
+    74,
+    75,
+    78,
+    79,
+    80,
+    81,
+    82,
+    83,
+    84,
+    85,
+    87,
+    187,
+    89,
+    189,
+    97,
+    98,
+    99,
+    100,
+    220,
+  ],
+  keyList: [
+    "enter",
+    "shift",
+    "control",
+    "alt",
+    "escape",
+    " ",
+    "arrowleft",
+    "arrowright",
+    "arrowright",
+    "arrowup",
+    "arrowdown",
+    "1",
+    "2",
+    "3",
+    "4",
+    "c",
+    "d",
+    "e",
+    "f",
+    "i",
+    "j",
+    "k",
+    "n",
+    "o",
+    "p",
+    "q",
+    "r",
+    "s",
+    "t",
+    "u",
+    "w",
+    "=",
+    "y",
+    "-",
+    "\\",
+    "|",
+  ],
+  //这个keymap好像没什么用，只是用来提示的？
   keyMap: {
     enter: 13,
     shift: 16,
@@ -1401,10 +1478,10 @@ const hasUseKey = {
     alt: 18,
     esc: 27,
     space: 32,
-    '←': 37,
-    '↑': 38,
-    '→': 39,
-    '↓': 40,
+    "←": 37,
+    "↑": 38,
+    "→": 39,
+    "↓": 40,
     1: 49,
     2: 50,
     3: 51,
@@ -1425,15 +1502,15 @@ const hasUseKey = {
     t: 84,
     u: 85,
     w: 87,
-    x: 88,
+    x: 187,
     y: 89,
-    z: 90,
+    z: 189,
     pad1: 97,
     pad2: 98,
     pad3: 99,
     pad4: 100,
-    '\\': 220
-  }
+    "\\": 220,
+  },
 };
 
 /**
@@ -2270,12 +2347,15 @@ const crossTabCtl = {
         t.switchPlayStatus();
       }
 
-      // 按键X：减速播放 -0.1
-      if (keyCode === 88) {
+      // 参考keycode
+      // https://www.bejson.com/othertools/keycodes/
+      // 按键-：减速播放 -0.1
+      if (keyCode === 189) {
         t.setPlaybackRate(player.playbackRate - 0.1);
       }
-      // 按键C：加速播放 +0.1
-      if (keyCode === 67) {
+      // 按键=：加速播放 +0.1
+      // 注意=+是一个按键，+需要多按shift，因此设置的是=
+      if (keyCode === 187) {
         t.setPlaybackRate(player.playbackRate + 0.1);
       }
       // 按键Z：正常速度播放

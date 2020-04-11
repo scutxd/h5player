@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         HTML5视频播放器增强脚本
+// @name         HTML5视频播放器增强脚本_修改按键
 // @name:en      HTML5 video player enhanced script
 // @name:zh      HTML5视频播放器增强脚本
 // @name:zh-CN   HTML5视频播放器增强脚本

@@ -783,12 +783,15 @@ import {
         t.switchPlayStatus()
       }
 
-      // 按键X：减速播放 -0.1
-      if (keyCode === 88) {
+      // 参考keycode
+      // https://www.bejson.com/othertools/keycodes/
+      // 按键-：减速播放 -0.1
+      if (keyCode === 189) {
         t.setPlaybackRate(player.playbackRate - 0.1)
       }
-      // 按键C：加速播放 +0.1
-      if (keyCode === 67) {
+      // 按键=：加速播放 +0.1
+      // 注意=+是一个按键，+需要多按shift，因此设置的是=
+      if (keyCode === 187) {
         t.setPlaybackRate(player.playbackRate + 0.1)
       }
       // 按键Z：正常速度播放
