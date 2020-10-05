@@ -32,15 +32,16 @@
 // @grant        GM_notification
 // @grant        GM_setClipboard
 // @grant        GM_info
-// @require      http://127.0.0.1:3086/dist/h5player.js
+// @require      file:///D:/Tampermonkey/myScript.js
 // ==/UserScript==
-
 
 /**
  * 使用说明：
  * 开启 Tampermonkey 的 允许访问文件网址 权限
  * 使用 @require 指向到你要调试的本地文件路径，例如：
  * // @require file:///D:/Tampermonkey/myScript.js
+ * 这样可以在Chrome的Sources面板查看到完整脚本文件
+ * 采用http://127.0.0.1/myScripts.js这种形式，没有成功
  *
  * 注意，使用该调试助手的时候以为你注入所有需要的特殊权限和功能，如果你使用了这些特殊的权限和功能必须在你的脚本里也注入一遍，否则会出现在调试模式下可以调用的功能，安装到油猴上却使用不了
  *

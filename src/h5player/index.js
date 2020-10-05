@@ -703,11 +703,11 @@ import {
       }
 
       // 按键X：减速播放 -0.1
-      if (keyCode === 88) {
+      if (keyCode === 189) {
         t.setPlaybackRate(player.playbackRate - 0.1)
       }
       // 按键C：加速播放 +0.1
-      if (keyCode === 67) {
+      if (keyCode === 187) {
         t.setPlaybackRate(player.playbackRate + 0.1)
       }
       // 按键Z：正常速度播放
